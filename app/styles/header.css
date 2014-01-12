@@ -1,0 +1,46 @@
+.header {
+    background-color: #f39c12;
+    height: 64px;
+    line-height: 64px;
+    padding-bottom: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+    border-style: none;
+}
+
+.navbar-brand{
+    padding: 0;
+    line-height: inherit;
+}
+
+.navbar-toggle{
+    line-height: inherit;
+}
+
+.header-logo{
+    font-size: 42px;
+    margin: 0;
+    line-height: inherit;
+    display: inline-block;
+    color: #34495e;
+}
+
+.header-logo > a{
+    text-decoration: none;
+}
+
+.header-logo > a:hover{
+    color: #425d77;
+    text-decoration: none;
+}
+
+.navbar-form{
+    margin: 0;
+}
+
+.search-box{
+    display: inline-block;
+    height: inherit;
+    margin: 0;
+}
