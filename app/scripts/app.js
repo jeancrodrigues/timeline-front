@@ -1,13 +1,12 @@
 'use strict';
 
-var projetinhoFrontApp = angular.module('projetinhoFrontApp', [
+angular.module('projetinhoFrontApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute'
-]);
-
-projetinhoFrontApp.config(function ($routeProvider) {
+])
+.config(function ($routeProvider,$httpProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
@@ -21,11 +20,14 @@ projetinhoFrontApp.config(function ($routeProvider) {
           templateUrl: 'views/login.html',
           controller: 'LoginCtrl'
         })
-        .when('/register', {
-          templateUrl: 'views/register.html',
-          controller: 'RegisterCtrl'
+        .when('/registrar', {
+          templateUrl: 'views/registrar.html',
+          controller: 'RegistrarCtrl'
         })
         .otherwise({
             redirectTo: '/login'
         });
+
+    $httpProvider.defaults.headers.post  = {'Content-Type': 'application/x-www-form-urlencoded'};
+    $httpProvider.defaults.headers.put  = {'Content-Type': 'application/x-www-form-urlencoded'};
 });

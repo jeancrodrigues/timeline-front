@@ -1,6 +1,6 @@
 'use strict';
 
-projetinhoFrontApp.controller(
+angular.module('projetinhoFrontApp').controller(
     'MainCtrl', function ($scope) {
     }
 );
