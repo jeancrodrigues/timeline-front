@@ -1,28 +1,40 @@
+.header, .navbar-brand, .navbar-toggle, .header-logo{
+    line-height: 64px;
+}
+
 .header {
     background-color: #f39c12;
     height: 64px;
-    line-height: 64px;
     padding-bottom: 0;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-bottom: 16px;
     border-style: none;
+}
+
+.header .navbar-collapse.in{
+    background-color: inherit;
+}
+.header .navbar-collapse.collapsing{
+    background-color: inherit;
 }
 
 .navbar-brand{
     padding: 0;
-    line-height: inherit;
 }
 
-.navbar-toggle{
-    line-height: inherit;
+.navbar-toggle .icon-bar{
+    background-color: #34495e;
+}
+
+.navbar-toggle:hover{
+    background-color: #f1c40f;
+}
+
+.navbar-form{
+    margin-top: 0;
 }
 
 .header-logo{
     font-size: 42px;
-    margin: 0;
-    line-height: inherit;
-    display: inline-block;
+    margin: 0 16px;
     color: #34495e;
 }
 
@@ -35,12 +47,6 @@
     text-decoration: none;
 }
 
-.navbar-form{
-    margin: 0;
-}
-
-.search-box{
-    display: inline-block;
-    height: inherit;
-    margin: 0;
+.header-user{
+    margin-right: 16px;
 }

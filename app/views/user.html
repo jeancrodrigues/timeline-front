@@ -1,15 +1,37 @@
-<h2>Cadastro Usuario</h2>
-<form>
-    Name: <input type="text" ng-model="user.nome" /><br />
-    Username: <input type="text" ng-model="user.username" /><br />
-    E-mail: <input type="email" ng-model="user.email" /><br />
-    Senha: <input type="password" ng-model="user.pass1" /><br />
-    Repita a senha: <input type="password" ng-model="user.pass2" /><br />
-    <button ng-click="saveUser()">Salvar</button>
-</form>
+<div class="row">
+    <div class="col-md-3">
+        <div class="sidebar affix" ng-show="user.nome">
+            <h3>{{user.nome}}</h3>
+            <ul class="nav">
+                <li><a href="">Novo Post</a></li>
+                <li><a href="">Perfil</a></li>
+                <li><a href="">Ferramentas</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="posts-container">
+            <h2>Hello, this is the user view 1</h2>
+            <h2>Hello, this is the user view 2</h2>
+            <h2>Hello, this is the user view 3</h2>
+            <h2>Hello, this is the user view 4</h2>
+            <h2>Hello, this is the user view 5</h2>
+            <h2>Hello, this is the user view 6</h2>
+            <h2>Hello, this is the user view 7</h2>
+            <h2>Hello, this is the user view 8</h2>
+            <h2>Hello, this is the user view 9</h2>
+            <h2>Hello, this is the user view </h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+            <h2>Hello, this is the user view</h2>
+        </div>
+    </div>
 
-<p>User: {{user}}</p>
-<p>Retorno Api: {{ret}}</p>
-
-
-
+</div>

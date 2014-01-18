@@ -1,35 +1,41 @@
 <div class="row">
-    <div class="col-md-8">
-        <div class="jumbotron">
+    <div class="col-md-7 col-md-offset-1">
+        <div class="jumbotron painel-login">
             <h2>Bem-vindo à Timeline</h2>
             <p>Entre e descubra o que seus amigos estão compartilhando.</p>
-            <p>Ainda não se registrou? <a href="#/registrar">Registre-se agora</a>, é totalmente grátis e não demora nada =].</p>
+            <p>Ainda não se registrou? <a href="#/registrar">Registre-se</a>, é totalmente grátis e não demora nada =].</p>
             <p>Você também pode entrar usando suas contas das redes sociais, sqn :(</p>
             <p>{{retornoLogin}}</p>
         </div>
     </div>
-    <div class="col-md-3 login-panel">
-        <form class="form-horizontal">
-            <h2>Login</h2>
+
+    <div class="col-md-3 painel painel-form">
+        <h2>Login</h2>
+        <p>{{mensagem}}</p>
+        <form>
             <div class="form-group">
-                <label class="col-md-3 control-label" for="username">Usuário</label>
-                <div class="col-md-9">
-                    <input class="form-control" type="text" id="username" name="username" placeholder="Digite seu username" ng-model="user.username">
-                </div>
+            <label class="control-label" for="username">Usuário</label>
+            <input class="form-control" type="text" id="username" name="username"
+                placeholder="usuário" ng-model="userForm.username">
             </div>
             <div class="form-group">
-                <label class="col-md-3 control-label" for="pass">Senha</label>
-                <div class="col-md-9">
-                    <input class="form-control" type="password" id="pass" name="pass" placeholder="Digite sua senha" ng-model="user.pass">
-                </div>
+            <label class="control-label" for="pass">Senha</label>
+            <input class="form-control" type="password" id="pass" name="pass"
+                placeholder="senha" ng-model="userForm.pass">
             </div>
-            <div class="login-panel-buttons">
-                <div class="form-group">
-                    <button class="col-md-offset-8 btn btn-default" type="button" ng-click="logar(user)">
-                        Entrar <span class="glyphicon glyphicon-log-in"></span>
-                    </button>
-                </div>
-            </div>
+            <button class="btn btn-primary" type="submit" ng-click="logar(userForm)" >Entrar</button>
         </form>
     </div>
+
+    <!--<div class="form-group">-->
+    <!--<input class="form-control" type="text" id="username" name="username"-->
+    <!--placeholder="usuário" ng-model="user.username">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+    <!--<input class="form-control" type="password" id="pass" name="pass"-->
+    <!--placeholder="senha" ng-model="user.pass">-->
+    <!--</div>-->
+    <!--<button class="btn btn-default" type="button" ng-click="logar(user)">-->
+    <!--<span class="glyphicon glyphicon-log-in"></span>-->
+    <!--</button>-->
 </div>

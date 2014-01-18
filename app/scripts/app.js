@@ -6,7 +6,7 @@ angular.module('projetinhoFrontApp', [
   'ngSanitize',
   'ngRoute'
 ])
-.config(function ($routeProvider,$httpProvider) {
+.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'views/main.html',
@@ -24,10 +24,11 @@ angular.module('projetinhoFrontApp', [
           templateUrl: 'views/registrar.html',
           controller: 'RegistrarCtrl'
         })
+        .when('/logout', {
+          templateUrl: 'views/logout.html',
+          controller: 'LogoutCtrl'
+        })
         .otherwise({
             redirectTo: '/login'
         });
-
-    $httpProvider.defaults.headers.post  = {'Content-Type': 'application/x-www-form-urlencoded'};
-    $httpProvider.defaults.headers.put  = {'Content-Type': 'application/x-www-form-urlencoded'};
 });

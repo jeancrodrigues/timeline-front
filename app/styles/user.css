@@ -1,0 +1,16 @@
+.sidebar{
+    background-color: #f39c12;
+    color: #34495e;
+    z-index: 2;
+    top: 64px;
+    width: inherit;
+    padding-bottom: 16px;
+}
+
+.sidebar .left{
+    right: 0;
+}
+
+.posts-container{
+    background-color: #ecf0f1;
+}

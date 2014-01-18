@@ -1,12 +1,17 @@
 body{
+    padding-top: 80px;
     background-color: #34495e;
-    /*background-color: #ecf0f1;*/
 }
 
-/*.container{*/
-    /*background-color: #34495e;*/
-/*}*/
+.app .row{
+    margin-right: 0;
+}
 
-.jumbotron{
-    border-radius: 0;
+.painel{
+    background-color: #ecf0f1;
+    border-radius: 6px;
+}
+
+.painel-form{
+    padding: 16px;
 }
