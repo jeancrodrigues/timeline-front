@@ -50,3 +50,13 @@
 .header-user{
     margin-right: 16px;
 }
+
+.header-user a{
+    color: #34495e;
+    text-decoration: none;
+}
+
+.header-user a:hover{
+    color: #425d77;
+    text-decoration: none;
+}

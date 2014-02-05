@@ -7,6 +7,16 @@
     padding-bottom: 16px;
 }
 
+.sidebar li a{
+    color: #34495e;
+}
+
+.sidebar li a:hover{
+    color: #f39c12;
+    font-weight: bold;
+    background-color: #34495e;
+}
+
 .sidebar .left{
     right: 0;
 }
