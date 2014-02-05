@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 dist
 .tmp
@@ -9,3 +10,20 @@ app/bower_components
 .bowerrc
 .jshintrc
 .travis.yml
+=======
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+>>>>>>> 0ef28e8d023654d310a5e984ffa0b2dac868baa7
