@@ -6,9 +6,6 @@ app/bower_components
 .idea/
 .editorconfig
 .editorconfig
-.bowerrc
-.jshintrc
-.travis.yml
 lib-cov
 *.seed
 *.log
