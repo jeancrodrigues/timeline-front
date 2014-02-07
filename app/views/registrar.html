@@ -1,4 +1,4 @@
-<div class="col-md-5 col-md-offset-1">
+<div class="col-md-7">
     <div class="jumbotron painel">
         <h2>Registre-se</h2>
         <p>É muito facil, basta preencher os campos ao lado.</p>
@@ -6,29 +6,22 @@
             Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis.
             Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é
             amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris
-            qui num significa nadis i pareci latim.</p>
+            qui num significa nadis i pareci latim.
+            se eu mudar algo e salvar ele vai aparecer na tela
+            </p>
     </div>
 </div>
 <div class="col-md-5">
     <div class="painel painel-form">
         <h2>Digite seus dados</h2>
-        <form class="form-horizontal" role="form">
+        <form novalidate class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="nome" class="control-label col-md-4">
                     Nome:
                 </label>
                 <div class="col-md-6">
-                    <input class="form-control" type="text" id="nome"
+                    <input class="form-control" type="text" id="nome" ng-model="novoUsuario.nome"
                            placeholder="Digite o seu nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="sobrenome" class="control-label col-md-4">
-                    Sobrenome:
-                </label>
-                <div class="col-md-6">
-                    <input class="form-control" type="text" id="sobrenome"
-                           placeholder="Digite o seu Sobrenome">
                 </div>
             </div>
             <div class="form-group">
@@ -36,32 +29,61 @@
                     Usuário:
                 </label>
                 <div class="col-md-6">
-                    <input class="form-control" type="text" id="usuario"
+                    <input class="form-control" type="text" id="usuario" ng-model="novoUsuario.nomeusuario"
                            placeholder="Digite o seu nome de usuário">
                 </div>
             </div>
             <div class="form-group">
-                <label for="datanascimento" class="control-label col-md-4">
-                    Data de Nascimento:
+                <label for="email" class="control-label col-md-4">
+                    Email:
                 </label>
-                <div class="col-md-4">
-                    <input class="form-control" type="date" id="datanascimento">
+                <div class="col-md-6">
+                    <input class="form-control" type="email" id="email" ng-model="novoUsuario.email"
+                           placeholder="Digite o seu email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="datanascimento" class="control-label col-md-4">
+                    Nascimento:
+                </label>
+                <div class="col-md-6">
+                    <input class="form-control" type="date" id="datanascimento" ng-model="novoUsuario.datanascimento">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sexo" class="control-label col-md-4">
+                    Sexo:
+                </label>
+                <div class="col-md-6" id="sexo">
+                    <input type="radio" ng-model="novoUsuario.sexo" value="m">
+                    	Masculino
+                   	</input>
+                   	<input type="radio" ng-model="novoUsuario.sexo" value="f">
+                    	Feminino
+                   	</input>
                 </div>
             </div>
             <div class="form-group">
                 <label for="senha0" class="control-label col-md-4">
                     Senha:
                 </label>
-                <div class="col-md-5">
-                <input class="form-control" type="password" id="senha0"
+                <div class="col-md-6">
+                <input class="form-control" type="password" id="senha0" ng-model="novoUsuario.senha0"
                        placeholder="Digite a sua senha">
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-5 col-md-offset-4">
-                <input class="form-control" type="password" id="senha1"
+                <div class="col-md-6 col-md-offset-4">
+                <input class="form-control" type="password" id="senha1" ng-model="novoUsuario.senha1"
                        placeholder="Redigite a sua senha">
                 </div>
+            </div>
+            <div class="form-group">
+	            <div class="col-md-3 col-md-offset-2">
+	            	<button class="btn btn-primary" ng-click="registrar(novoUsuario)">
+	            		Registrar
+	            	</button>
+	            </div>
             </div>
         </form>
     </div>

@@ -1,20 +1,23 @@
 <nav class="navbar navbar-fixed-top header" ng-controller="HeaderCtrl as header">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#timeline-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand header-logo" href="#">Timeline</a>
-    </div>
-
-    <div class="collapse navbar-collapse"  id="timeline-collapse">
-        <div class="navbar-right header-user" ng-hide="user.nome" >
-            Bem vindo, faça <a href="#/login">Login</a> ou <a href="#/registrar">Registre-se</a>
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#timeline-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand header-logo" href="#">Timeline</a>
         </div>
-        <div class="navbar-right header-user" ng-show="user.nome">
-            <a href="#/user">{{user.nome}}</a> <a href="" ng-click="deslogar()">Logout</a>
+
+        <div class="collapse navbar-collapse" id="timeline-collapse">
+            <div class="navbar-right header-user" ng-hide="user.nome" >
+                Bem vindo, faça <a href="#/login">Login</a> ou <a href="#/registrar">Registre-se</a>
+            </div>
+            <div class="navbar-right header-user" ng-show="user.nome">
+                <a href="#/user"><strong>{{user.nome}}</strong></a>
+                <a href="" ng-click="deslogar()">Logout</a>
+            </div>
         </div>
     </div>
 </nav>

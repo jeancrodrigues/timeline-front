@@ -4,7 +4,7 @@ angular.module('projetinhoFrontApp')
     .factory('UserSvc', function ($resource,$cookieStore, $rootScope, UrlValues) {
         var usuario = {}, callbacks = [];
 
-        var UserSvc = $resource(UrlValues.postuser,{},{
+        var UserResource = $resource(UrlValues.postuser,{},{
             salvar:{
                 method: 'POST',
                 params: {
@@ -53,7 +53,7 @@ angular.module('projetinhoFrontApp')
                     email: user.email ,
                     senha: user.senha
                 });
-                UserSvc.salvar(param,fnSucess,fnError);
+                UserResource.salvar(param,fnSucess,fnError);
             },
             verificarUsuario: verificarUsuario,
             registrarCallback: function(callback){

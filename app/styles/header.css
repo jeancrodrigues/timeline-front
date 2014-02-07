@@ -20,6 +20,10 @@
     padding: 0;
 }
 
+.navbar > .container .navbar-brand{
+    margin-left: auto;
+}
+
 .navbar-toggle .icon-bar{
     background-color: #34495e;
 }
@@ -32,31 +36,25 @@
     margin-top: 0;
 }
 
-.header-logo{
-    font-size: 42px;
-    margin: 0 16px;
+.header{
     color: #34495e;
 }
 
-.header-logo > a{
+.header a{
+    color: #34495e;
     text-decoration: none;
 }
 
-.header-logo > a:hover{
+.header a:hover{
     color: #425d77;
     text-decoration: none;
+}
+
+.header-logo{
+    font-size: 42px;
+    margin: 0 16px;
 }
 
 .header-user{
     margin-right: 16px;
-}
-
-.header-user a{
-    color: #34495e;
-    text-decoration: none;
-}
-
-.header-user a:hover{
-    color: #425d77;
-    text-decoration: none;
 }
