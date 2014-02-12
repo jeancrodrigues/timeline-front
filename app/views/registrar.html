@@ -14,72 +14,77 @@
 <div class="col-md-5">
     <div class="painel painel-form">
         <h2>Digite seus dados</h2>
-        <form novalidate class="form-horizontal" role="form">
+        <form novalidate class="form-horizontal" role="form" name="registro">
             <div class="form-group">
-                <label for="nome" class="control-label col-md-4">
+                <label for="nome" class="control-label col-md-3">
                     Nome:
                 </label>
-                <div class="col-md-6">
-                    <input class="form-control" type="text" id="nome" ng-model="novoUsuario.nome"
-                           placeholder="Digite o seu nome">
+                <div class="col-md-8">
+                    <input class="form-control"
+                           type="text" id="nome" placeholder="Digite o seu nome"
+                           ng-model="novoUsuario.nome" ng-minlength="7" ng-maxlength="30" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="usuario" class="control-label col-md-4">
+                <label for="usuario" class="control-label col-md-3">
                     Usuário:
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <input class="form-control" type="text" id="usuario" ng-model="novoUsuario.nomeusuario"
-                           placeholder="Digite o seu nome de usuário">
+                           placeholder="Digite o seu nome de usuário"
+                           ng-minlength="4" ng-maxlength="20" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="control-label col-md-4">
+                <label for="email" class="control-label col-md-3">
                     Email:
                 </label>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <input class="form-control" type="email" id="email" ng-model="novoUsuario.email"
-                           placeholder="Digite o seu email">
+                           placeholder="Digite o seu email" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="datanascimento" class="control-label col-md-4">
+                <label for="datanascimento" class="control-label col-md-3">
                     Nascimento:
                 </label>
-                <div class="col-md-6">
-                    <input class="form-control" type="date" id="datanascimento" ng-model="novoUsuario.datanascimento">
+                <div class="col-md-5">
+                    <input class="form-control" type="date" id="datanascimento"
+                           ng-model="novoUsuario.datanascimento" required>
                 </div>
             </div>
             <div class="form-group">
-                <label for="sexo" class="control-label col-md-4">
+                <label class="control-label col-md-3">
                     Sexo:
                 </label>
-                <div class="col-md-6" id="sexo">
+                <div class="col-md-7">
                     <input type="radio" ng-model="novoUsuario.sexo" value="m">
                     	Masculino
                    	</input>
+                </div>
+                <div class="col-md-7">
                    	<input type="radio" ng-model="novoUsuario.sexo" value="f">
                     	Feminino
                    	</input>
                 </div>
             </div>
             <div class="form-group">
-                <label for="senha0" class="control-label col-md-4">
+                <label for="senha0" class="control-label col-md-3">
                     Senha:
                 </label>
                 <div class="col-md-6">
                 <input class="form-control" type="password" id="senha0" ng-model="novoUsuario.senha0"
-                       placeholder="Digite a sua senha">
+                       placeholder="Digite a sua senha" required>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
+                <div class="col-md-6 col-md-offset-3">
                 <input class="form-control" type="password" id="senha1" ng-model="novoUsuario.senha1"
-                       placeholder="Redigite a sua senha">
+                       placeholder="Redigite a sua senha" required>
                 </div>
             </div>
             <div class="form-group">
-	            <div class="col-md-3 col-md-offset-2">
+	            <div class="col-md-3 col-md-offset-3">
 	            	<button class="btn btn-primary" ng-click="registrar(novoUsuario)">
 	            		Registrar
 	            	</button>
