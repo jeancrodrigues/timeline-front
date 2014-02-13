@@ -47,11 +47,11 @@ angular.module('projetinhoFrontApp')
             gravarUser: function(user,fnSucess,fnError){
                 var param = $.param({
                     nome: user.nome,
-                    nomeusuario: user.username,
+                    nomeusuario: user.nomeusuario,
                     datanascimento: user.datanascimento ,
                     sexo: user.sexo ,
                     email: user.email ,
-                    senha: user.senha
+                    senha: user.senha0
                 });
                 UserResource.salvar(param,fnSucess,fnError);
             },
