@@ -1,6 +1,8 @@
 <div class="row">
+
+    <!-- Perfil Usuário -->
     <div class="col-md-3">
-        <div class="sidebar" ng-show="user.nome">
+         <div class="sidebar" ng-show="user.nome">
             <div class="perfil">
                 <img src="images/anon_user.png" class="foto-perfil" alt="Foto perfil"
                         height="120" width="120">
@@ -9,14 +11,54 @@
             <ul class="nav">
                 <li><a href="">Novo Post</a></li>
                 <li><a href="">Perfil</a></li>
-                <li><a href="">Ferramentas</a></li>
             </ul>
+        </div> 
+    </div>
+    
+    <div ng-class="classepainelposts">  
+
+        <!-- Novo post -->    
+        <div class="alert panel formnovopost">            
+            <!-- botao fechar
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            -->
+            <div class="panel-body">                                
+                <h3>Novo post</h3>
+                <form role="form" id="novopost">
+                    <div class="form-group">
+                        <label for="titulonovopost">
+                            Título
+                        </label>
+                        <input type="text" class="form-control" id="titulonovopost" 
+                            placeholder="Título do post" ng-model="novopost.titulo">
+                    </div>
+                    <div class="form-group">
+                        <label for="textonovopost">
+                            Texto
+                        </label>
+                        <textarea id="textonovopost" class="form-control" rows="5" placeholder="Texto do post"
+                            ng-model="novopost.texto">
+                        </textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" ng-click="postar(novopost)">Postar</button>
+                </form>
+            </div>
+        </div>    
+
+        <!-- Posts do usuário -->    
+        <div>
+            <div ng-repeat="post in posts" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{post.titulo}}</h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{post.texto}}</p>
+                </div>
+                <div class="panel-footer">
+                    Publicado por <a href="#/perfil/{{post.nomeusuario}}">{{post.nomeusuario}}</a>
+                    em {{post.datapublicacao}}.
+                </div>
+            </div>
         </div>
     </div>
-    <div class="col-md-9">
-        <div class="posts-container">
-
-        </div>
-    </div>
-
 </div>
