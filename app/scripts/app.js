@@ -8,11 +8,11 @@ angular.module('projetinhoFrontApp', [
 ])
 .config(function ($routeProvider) {
     $routeProvider
-        .when('/', {
+        .when('/main', {
             templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         })
-        .when('/user', {
+        .when('/', {
             templateUrl: 'views/user.html',
             controller: 'UserCtrl'
         })
