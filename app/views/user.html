@@ -15,21 +15,20 @@
         </div> 
     </div>
     
-    <div ng-class="classepainelposts">  
-
-        <!-- Novo post -->    
-        <div class="alert panel formnovopost">            
+    <div ng-class="classepainelposts">
+        <!-- Novo post -->
+        <div class="alert panel formnovopost" ng-show="user.nome">
             <!-- botao fechar
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             -->
-            <div class="panel-body">                                
+            <div class="panel-body">
                 <h3>Novo post</h3>
                 <form role="form" id="novopost">
                     <div class="form-group">
                         <label for="titulonovopost">
                             Título
                         </label>
-                        <input type="text" class="form-control" id="titulonovopost" 
+                        <input type="text" class="form-control" id="titulonovopost"
                             placeholder="Título do post" ng-model="novopost.titulo">
                     </div>
                     <div class="form-group">
@@ -43,8 +42,7 @@
                     <button type="submit" class="btn btn-primary" ng-click="postar(novopost)">Postar</button>
                 </form>
             </div>
-        </div>    
-
+        </div>
         <!-- Posts do usuário -->    
         <div>
             <div ng-repeat="post in posts" class="panel panel-default">

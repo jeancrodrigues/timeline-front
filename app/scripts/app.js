@@ -8,11 +8,11 @@ angular.module('projetinhoFrontApp', [
 ])
 .config(function ($routeProvider) {
     $routeProvider
-        .when('/main', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-        })
         .when('/', {
+            templateUrl: 'views/posts.html',
+            controller: 'PostsCtrl'
+        })
+        .when('/user', {
             templateUrl: 'views/user.html',
             controller: 'UserCtrl'
         })
@@ -29,6 +29,6 @@ angular.module('projetinhoFrontApp', [
           controller: 'LogoutCtrl'
         })
         .otherwise({
-            redirectTo: '/login'
+            redirectTo: '/'
         });
 });

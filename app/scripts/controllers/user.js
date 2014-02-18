@@ -2,13 +2,9 @@
 
 angular.module('projetinhoFrontApp').controller(
     'UserCtrl', function ($scope,UserSvc) {
-        //$scope.user = UserSvc.getUser();
-        $scope.novopost = {};
+        $scope.user = UserSvc.getUser();
 
-        $scope.user = {
-            nome:"Usuario",
-            nomeusuario: "usuario1"
-        };
+        $scope.novopost = {};
 
         $scope.postar = function(post){
             post.nomeusuario = $scope.nomeusuario;
