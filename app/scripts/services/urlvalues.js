@@ -7,6 +7,8 @@ angular.module('projetinhoFrontApp')
             postuser: baseApiUrl + 'user',
             getuserbyid: baseApiUrl + 'user/:id',
             getusers: baseApiUrl + 'users',
-            login: baseApiUrl + 'login'
+            login: baseApiUrl + 'login',
+            postsbyiduser: baseApiUrl + 'user/:userid/posts/:seq',
+            postsrecentes: baseApiUrl + '/posts/:id'
         }
     });

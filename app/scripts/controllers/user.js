@@ -1,18 +1,32 @@
 'use strict';
 
 angular.module('projetinhoFrontApp').controller(
-    'UserCtrl', function ($scope,UserSvc) {
-        $scope.user = UserSvc.getUser();
+    'UserCtrl', function ($scope,UserSvc,PostsSvc) {
 
+        var user = UserSvc.getUser()
+
+        $scope.user = user;
         $scope.novopost = {};
+
+        atualizarposts(0);
+
+        function atualizarposts(seq){
+            PostsSvc.getposts(user.iduser, seq ,function(data){
+                $scope.posts = data;
+            });
+        }
 
         $scope.postar = function(post){
             post.nomeusuario = $scope.nomeusuario;
             post.datapublicacao = new Date();
             $scope.posts.push(post);
             $scope.novopost = {};
+            atualizarposts(0);
         }
-        
+
+
+
+        /*
         $scope.posts = [
         	{ titulo: 'Post 1' , 
         	texto: 'Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.', 
@@ -43,10 +57,6 @@ angular.module('projetinhoFrontApp').controller(
             nomeusuario: 'usuario9' , datapublicacao: '02/12/2013 12:56:00' }
         ];
 
-        if($scope.user !== undefined){
-            $scope.classepainelposts = 'col-md-9';
-        }else{
-            $scope.classepainelposts = 'col-md-8 col-md-offset-2'
-        }
+        */
     }
 );
