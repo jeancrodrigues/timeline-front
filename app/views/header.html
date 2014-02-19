@@ -7,17 +7,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand header-logo" href="#">Timeline</a>
+            <a class="navbar-brand header-logo" href="#">haushdua</a>
         </div>
-
-        <div class="collapse navbar-collapse" id="timeline-collapse">
-            <div class="navbar-right header-user" ng-hide="user.nome" >
-                Bem vindo, faça <a href="#/login">Login</a> ou <a href="#/registrar">Registre-se</a>
+        <div class="collapse navbar-collapse" id="timeline-collapse">            
+            <div class="navbar-form buscarusuario">
+                <input type="text" class="form-control" placeholder="Buscar Usuário">           
             </div>
-            <div class="navbar-right header-user" ng-show="user.nome">
-                <a href="#/user"><strong>{{user.nome}}</strong></a>
-                <a href="" ng-click="deslogar()">Logout</a>
-            </div>
+            <div class="navbar-right header-user">
+                <div ng-hide="user.nome">
+                    Bem vindo, faça <a href="#/login">Login</a> ou <a href="#/registrar">Registre-se</a>
+                </div>            
+                <div ng-show="user.nome">
+                    <a href="#/user"><strong>{{user.nome}}</strong></a>
+                    <a href="" ng-click="deslogar()">Logout</a>
+                </div>
+            </div>            
         </div>
     </div>
 </nav>
