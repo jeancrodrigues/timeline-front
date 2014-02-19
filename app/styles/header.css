@@ -43,6 +43,7 @@
 .header a{
     color: #34495e;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .header a:hover{
@@ -57,4 +58,13 @@
 
 .header-user{
     margin-right: 16px;
+}
+
+.navbar-collapse{
+    text-align: center;
+}
+
+.buscarusuario{
+    display: inline-block;
+    width: 35%;
 }
