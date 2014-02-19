@@ -2,19 +2,33 @@
 
 angular.module('projetinhoFrontApp')
   .factory('PostsSvc', function ($resource,UrlValues) {
-    var PostsResource = $resource(
+    var Postsbyiduser = $resource(
         UrlValues.postsbyiduser,
         { userid: '@userid', seq: '@seq' },
         {
             get: {method: 'GET' , isArray: true}
         }
+    ), PostsRecentes = $resource(
+        UrlValues.postsrecentes,
+        { seq: '@seq' },
+        {
+            get: {method: 'GET' , isArray: true}
+        }
     );
+
     return {
-      getposts: function (userid,seq,fn) {
+      getpostsfromuser: function (fn,userid,seq) {
           if(seq|seq !== undefined){
-            PostsResource.get({userid:userid},fn);
+            Postsbyiduser.get({userid:userid},fn);
           }else{
-            PostsResource.get({userid:userid, seq: seq},fn);
+            Postsbyiduser.get({userid:userid, seq: seq},fn);
+          }
+      },
+      getpostsrecentes : function(fn,seq){
+          if(seq|seq !== undefined){
+            PostsRecentes.get(fn);
+          }else{
+            PostsRecentes.get({seq: seq},fn);
           }
       }
     };
