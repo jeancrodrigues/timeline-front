@@ -3,9 +3,10 @@
 angular.module('projetinhoFrontApp').controller(
     'UserCtrl', function ($scope,UserSvc,PostsSvc) {
 
-        var user = UserSvc.getUser()
-
+        var user = UserSvc.getUser();
         $scope.user = user;
+
+
         $scope.novopost = {};
 
         function atualizarposts(seq){
@@ -15,11 +16,10 @@ angular.module('projetinhoFrontApp').controller(
         }
 
         $scope.postar = function(post){
-            post.nomeusuario = $scope.nomeusuario;
-            post.datapublicacao = new Date();
-            $scope.posts.push(post);
+            PostsSvc.gravarpost(post.titulo,post.texto,function(data){
+                console.log(data);
+            });
             $scope.novopost = {};
-            atualizarposts(0);
         }
 
         atualizarposts(0);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projetinhoFrontApp')
-  .factory('PostsSvc', function ($resource,UrlValues) {
+  .factory('PostsSvc', function ($resource,UrlValues,UserSvc) {
     var Postsbyiduser = $resource(
         UrlValues.postsbyiduser,
         { userid: '@userid', seq: '@seq' },
@@ -13,6 +13,15 @@ angular.module('projetinhoFrontApp')
         { seq: '@seq' },
         {
             get: {method: 'GET' , isArray: true}
+        }
+    ), Post = $resource(
+        UrlValues.gravarpost, {},
+        {
+            gravar: {
+                method: 'POST' , isArray: false,
+                params: { iduser: '' , token:'', texto: '', titulo: '' },
+                headers:{ 'Content-Type': 'application/x-www-form-urlencoded' }
+            }
         }
     );
 
@@ -29,6 +38,22 @@ angular.module('projetinhoFrontApp')
             PostsRecentes.get(fn);
           }else{
             PostsRecentes.get({seq: seq},fn);
+          }
+      },
+      gravarpost : function(titulo,texto,fn){
+          var user = UserSvc.getUser();
+          if(user|user !== undefined){
+              Post.gravar(
+                  $.param(
+                      {
+                          titulo: titulo,
+                          texto: texto,
+                          iduser: user.id,
+                          token: user.token
+                      }
+                  ),
+                  fn
+              );
           }
       }
     };
