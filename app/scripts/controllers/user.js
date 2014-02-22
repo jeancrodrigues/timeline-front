@@ -18,7 +18,7 @@ angular.module('projetinhoFrontApp').controller(
         $scope.postar = function(post){
             PostsSvc.gravarpost(post.titulo,post.texto,function(data){
                 console.log(data);
-                if(data.mensagem='ok'){
+                if(data.mensagem = 'ok'){
                     $scope.novopost = {};
                     atualizarposts(0);
                 }
