@@ -48,7 +48,7 @@ angular.module('projetinhoFrontApp')
                       {
                           titulo: titulo,
                           texto: texto,
-                          iduser: user.id,
+                          iduser: user.iduser,
                           token: user.token
                       }
                   ),
