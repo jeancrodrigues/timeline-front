@@ -64,7 +64,8 @@
     text-align: center;
 }
 
-.buscarusuario{
+.buscarusuario .buscarusuarioinput{
     display: inline-block;
     width: 35%;
 }
+
