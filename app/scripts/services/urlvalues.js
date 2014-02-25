@@ -6,7 +6,8 @@ angular.module('projetinhoFrontApp')
         return {
             postuser: baseApiUrl + 'user',
             getuserbyid: baseApiUrl + 'user/:id',
-            getusers: baseApiUrl + 'users',
+            getuserslist: baseApiUrl + 'users/',
+            getusers: baseApiUrl + 'users/:nome',
             login: baseApiUrl + 'login',
             postsbyiduser: baseApiUrl + 'user/:userid/posts/:seq',
             postsrecentes: baseApiUrl + 'posts/:seq',

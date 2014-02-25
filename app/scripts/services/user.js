@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('projetinhoFrontApp')
-    .factory('UserSvc', function ($resource,$cookieStore, $rootScope, UrlValues) {
+    .factory('UserSvc', function ($resource,$http,$cookieStore, $rootScope, UrlValues) {
         var usuario = {}, callbacks = [];
 
         var UserResource = $resource(UrlValues.postuser,{},{
@@ -13,6 +13,14 @@ angular.module('projetinhoFrontApp')
                     email: '' , senha: ''
                 },
                 headers:{ 'Content-Type': 'application/x-www-form-urlencoded' }
+            }
+        });
+
+        var BuscarUsuarioResource = $resource(UrlValues.getusers,
+            { nome: '@nome'},{
+            buscar: {
+                method: 'GET',
+                isArray: true
             }
         });
 
@@ -59,6 +67,13 @@ angular.module('projetinhoFrontApp')
             registrarCallback: function(callback){
                 callbacks.push(callback);
                 callback();
+            },
+            buscarUsuarios : function(nome){
+                return $http.get(UrlValues.getuserslist + nome, {}).then(function(res){
+                    console.log("usersvc.buscarUsuarios()");
+                    console.log(res);
+                    return res.data;
+                });
             }
         }
     });
