@@ -12,13 +12,13 @@
     <div class="painel painel-form">
         <h2>Digite seus dados</h2>
         <form novalidate class="form-horizontal" role="form" name="registro">
-            <div class="form-group">
+            <div class="form-group" ng-class="getformclass(registro.nome)">
                 <label for="nome" class="control-label col-md-3">
                     Nome:
                 </label>
                 <div class="col-md-8">
                     <input class="form-control"
-                           type="text" id="nome" placeholder="Digite o seu nome"
+                           type="text" id="nome" placeholder="Digite o seu nome" name="nome"
                            ng-model="novoUsuario.nome" ng-minlength="7" ng-maxlength="30" required>
                 </div>
             </div>
