@@ -8,9 +8,15 @@ angular.module('projetinhoFrontApp')
         {
             get: {method: 'GET' , isArray: true}
         }
-    ), PostsRecentes = $resource(
-        UrlValues.postsrecentes,
+    ), Posts = $resource(
+        UrlValues.posts,
         { seq: '@seq' },
+        {
+            get: {method: 'GET' , isArray: true}
+        }
+    ),Postsrecentes = $resource(
+        UrlValues.postsrecentes,
+        { idpost: '@idpost' },
         {
             get: {method: 'GET' , isArray: true}
         }
@@ -33,12 +39,15 @@ angular.module('projetinhoFrontApp')
             Postsbyiduser.get({userid:userid, seq: seq},fn);
           }
       },
-      getpostsrecentes : function(fn,seq){
+      getposts : function(fn,seq){
           if(seq|seq !== undefined){
-            PostsRecentes.get(fn);
+            Posts.get(fn);
           }else{
-            PostsRecentes.get({seq: seq},fn);
+            Posts.get({seq: seq},fn);
           }
+      },
+      getpostsrecentes : function(idpost,fn){
+          Postsrecentes.get({idpost: idpost},fn);
       },
       gravarpost : function(titulo,texto,fn){
           var user = UserSvc.getUser();

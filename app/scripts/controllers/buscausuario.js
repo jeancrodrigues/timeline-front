@@ -1,14 +1,17 @@
 'use strict';
 
 angular.module('projetinhoFrontApp')
-  .controller('BuscausuarioCtrl', function ($scope,UserSvc) {
+  .controller('BuscausuarioCtrl', function($scope,$location,UserSvc){
+        $scope.usuarioSelecionado = "";
 
         $scope.buscarUsuarios = function(nome){
-            console.log(nome);
-            if(nome !== undefined && nome.length > 2){
-                return UserSvc.buscarUsuarios(nome);
-            }else{
-                return [];
-            }
+            return UserSvc.buscarUsuarios(nome);
         };
+
+        $scope.selecionarUsuario = function($item, $model, $label){
+            console.log($item);
+            $scope.usuarioSelecionado = "";
+            $location.path('/user/' + $item.nomeusuario);
+        };
+
   });

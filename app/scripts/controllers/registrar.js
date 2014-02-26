@@ -5,6 +5,7 @@ angular.module('projetinhoFrontApp')
 		$scope.registrar = function(usuario){				
 			UserSvc.gravarUser(usuario,function(retorno){
 				console.log(retorno);
+                location
 			});
 		};
 

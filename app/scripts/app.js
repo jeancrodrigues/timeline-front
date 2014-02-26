@@ -5,7 +5,8 @@ angular.module('projetinhoFrontApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'infinite-scroll'
 ])
 .config(function ($routeProvider) {
     $routeProvider
@@ -14,6 +15,10 @@ angular.module('projetinhoFrontApp', [
             controller: 'PostsCtrl'
         })
         .when('/user', {
+            templateUrl: 'views/user.html',
+            controller: 'UserCtrl'
+        })
+        .when('/user/:nomeusuario', {
             templateUrl: 'views/user.html',
             controller: 'UserCtrl'
         })

@@ -2,7 +2,7 @@
 
 angular.module('projetinhoFrontApp')
     .controller('PostsCtrl', function ($scope,PostsSvc) {
-        PostsSvc.getpostsrecentes(function(data){
+        PostsSvc.getposts(function(data){
             $scope.posts = data;
         });
     });

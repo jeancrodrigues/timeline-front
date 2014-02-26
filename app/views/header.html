@@ -13,15 +13,15 @@
             <a class="navbar-brand header-logo" href="#">Hsahusauh</a>
         </div>
 
-        <div class="collapse navbar-collapse buscarusuario" id="timeline-collapse" ng-controller="BuscarusuarioCtrl">
-            <div class="navbar-form buscarusuarioinput">
+        <div class="collapse navbar-collapse buscarusuario" id="timeline-collapse">
+            <div class="navbar-form buscarusuarioinput" ng-controller="BuscausuarioCtrl">
                 <input type="text" class="form-control" 
                 ng-model="usuarioSelecionado"
                 placeholder="Buscar Usuário"
-                typeahead="usuario.nome as nome for usuario in usuarios|filter:{nome:$viewValue}"
+                typeahead="usuario.nome as nome for usuario in buscarUsuarios($viewValue)|filter:{nome:$viewValue}"
                 typeahead-min-length='3'
                 typeahead-wait-ms="500"
-                typeahead-on-select="onSelect($item, $model, $label)"
+                typeahead-on-select="selecionarUsuario($item, $model, $label)"
                 typeahead-template-url="itemTemplate.html">
             </div>
 

@@ -2,7 +2,7 @@
 
 angular.module('projetinhoFrontApp')
     .factory('UserSvc', function ($resource,$http,$cookieStore, $rootScope, UrlValues) {
-        var usuario = {}, callbacks = [];
+        var usuario = undefined, callbacks = [];
 
         var UserResource = $resource(UrlValues.postuser,{},{
             salvar:{
@@ -16,11 +16,11 @@ angular.module('projetinhoFrontApp')
             }
         });
 
-        var BuscarUsuarioResource = $resource(UrlValues.getusers,
+        var BuscarUsuarioResource = $resource(UrlValues.getuserbyname,
             { nome: '@nome'},{
             buscar: {
                 method: 'GET',
-                isArray: true
+                isArray: false
             }
         });
 
@@ -47,10 +47,12 @@ angular.module('projetinhoFrontApp')
                 return usuario;
             },
             unsetUser: function(){
-                usuario = null;
+                usuario = undefined;
                 $cookieStore.remove('usuariologado');
-                console.log('UserSvc: unsetUser');
                 updateCallbacks();
+            },
+            getUserByName: function(nome,fn){
+                BuscarUsuarioResource.buscar({nome:nome},fn);
             },
             gravarUser: function(user,fnSucess,fnError){
                 var param = $.param({
@@ -70,8 +72,6 @@ angular.module('projetinhoFrontApp')
             },
             buscarUsuarios : function(nome){
                 return $http.get(UrlValues.getuserslist + nome, {}).then(function(res){
-                    console.log("usersvc.buscarUsuarios()");
-                    console.log(res);
                     return res.data;
                 });
             }

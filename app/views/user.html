@@ -1,23 +1,19 @@
 <div class="row">
 
     <!-- Perfil Usuário -->
-    <div class="col-md-3" ng-show="user.nomeusuario">
+    <div class="col-md-3" ng-show="usuariologado">
          <div class="sidebar">
             <div class="perfil">
                 <img src="images/anon_user.png" class="foto-perfil" alt="Foto perfil"
                     height="120" width="120">
-                <p>{{user.nome}}</p>
+                <h4>{{user.nome}}</h4>
             </div>
-            <ul class="nav">
-                <li><a href="">Novo Post</a></li>
-                <li><a href="">Perfil</a></li>
-            </ul>
         </div> 
     </div>
     
-    <div class="col-md-9">
+    <div ng-class="postscontainerclass">
         <!-- Novo post -->
-        <div class="alert panel formnovopost" ng-show="user.nomeusuario">
+        <div class="panel formnovopost" ng-show="usuariologado">
             <!-- botao fechar
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             -->
@@ -54,7 +50,7 @@
                     <p>{{post.texto}}</p>
                 </div>
                 <div class="panel-footer">
-                    Publicado por <a href="#/perfil/{{post.nomeusuario}}">{{post.nomeusuario}}</a>
+                    Publicado por <a href="#/user/{{post.nomeusuario}}">{{post.nomeusuario}}</a>
                     em {{post.datacadastro}}.
                 </div>
             </div>
